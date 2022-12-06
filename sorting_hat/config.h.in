@@ -1,0 +1,5 @@
+// configured options and settings for CMake tutorial
+#define Sorting_Hat_VERSION_MAJOR @Sorting_Hat_VERSION_MAJOR@
+#define Sorting_Hat_VERSION_MINOR @Sorting_Hat_VERSION_MINOR@
+
+#cmakedefine USE_IO_UTILS

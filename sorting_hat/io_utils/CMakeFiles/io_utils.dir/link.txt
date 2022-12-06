@@ -1,0 +1,2 @@
+/usr/bin/ar qc libio_utils.a  
+/usr/bin/ranlib libio_utils.a
