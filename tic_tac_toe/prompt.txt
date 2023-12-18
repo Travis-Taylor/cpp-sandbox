@@ -1,0 +1,22 @@
+#include <iostream>
+class TicTacToe {
+  public:
+  // Create a public interface to create and size a new board.
+  
+  // Create a method that provides an API to make a new move. 
+  // This should also provide the result of the move (invalid, win, continue, etc.)
+  // Performance should scale linearly (or better) with board size. 
+  
+  private:
+  // storage for the game state.
+};
+
+
+int main() {
+  TicTacToe game;
+  
+  // Use main as a test bench for your code.
+  
+  return 0;
+}
+

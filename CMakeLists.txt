@@ -6,6 +6,7 @@ set (CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(class_work)
 add_subdirectory(loops)
+add_subdirectory(tic_tac_toe)
 add_subdirectory(ジャンケンポン)
 add_subdirectory(io_utils)
 
