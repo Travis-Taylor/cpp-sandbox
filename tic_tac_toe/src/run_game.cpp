@@ -9,11 +9,16 @@ void exit_if_win(MoveResult res) {
 }
 
 int main() {
-  TicTacToe game{3};
+  TicTacToe game{6};
+  game.PrintBoard();
   exit_if_win(game.MakeMove(0, 0));
+  game.PrintBoard();
   exit_if_win(game.MakeMove(2, 2));
+  game.PrintBoard();
   exit_if_win(game.MakeMove(0, 2));
+  game.PrintBoard();
   exit_if_win(game.MakeMove(2, 1));
+  game.PrintBoard();
   exit_if_win(game.MakeMove(0, 1));
 
   return 0;

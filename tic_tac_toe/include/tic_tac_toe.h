@@ -24,6 +24,8 @@ class TicTacToe {
   // This should also provide the result of the move (invalid, win, continue, etc.)
   // Performance should scale linearly (or better) with board size. 
   MoveResult MakeMove(int col, int row);
+
+  void PrintBoard() const;
   
   private:
   // storage for the game state.
@@ -46,6 +48,5 @@ class TicTacToe {
   void AddPlayerTotal(Player player, std::pair<int, int>&);
   // Check if the player just won
   bool CheckWin(Player, int, int) const;
-  void PrintBoard() const;
 };
 
