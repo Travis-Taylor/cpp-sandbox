@@ -32,16 +32,20 @@ TicTacToe::TicTacToe(int size) {
 }
 
 MoveResult TicTacToe::MakeMove(int col, int row) {
-  Player current_player = static_cast<Player>((last_player_ + 1) % 2);
-  if (col >= size_ || row >= size_) {
+  if (game_over_) {
+    std::cout << "Game already over!" << std::endl;
+    return MoveResult::INVALID; 
+  }
+  if (col >= size_ || col < 0 || row >= size_ || row < 0) {
     std::cout << "Invalid choice, must be 0-indexed position within " 
       << size_ << "-sized board" << std::endl;
    return MoveResult::INVALID; 
   }
   if (board_[col][row] != Player::NEITHER) {
     std::cout << "Invalid choice, spot already claimed!" << std::endl;
-   return MoveResult::INVALID; 
+    return MoveResult::INVALID; 
   }
+  Player current_player = static_cast<Player>((last_player_ + 1) % 2);
   last_player_ = current_player;
   board_[col][row] = current_player;
   AddPlayerTotal(current_player, col_totals_[col]);
@@ -102,8 +106,13 @@ bool TicTacToe::CheckWin(Player player, int col, int row) const {
 }
 
 void TicTacToe::PrintBoard() const {
-  std::cout << "Player1 = X, Player2 = O" << std::endl;
+  std::cout << "Player1 = X, Player2 = O" << std::endl << "  ";
+  for (int ii = 0; ii < size_; ii++) {
+    std::cout << " " << ii << "  ";
+  }
+  std::cout << std::endl;
   for (int row = 0; row < size_; row++) {
+    std::cout << row << " ";
     for (int col = 0; col < size_; col++) {
       char selection = ' ';
       if (board_[col][row] == Player::FIRST) {
